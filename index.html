@@ -49,6 +49,7 @@
         <a class="item" href="#">Leaderboard <i class="fas fa-caret-down"></i></a>
         <a class="item" href="#">About</a>
         <a class="item" href="#">FAQ</a>
+        <a class="item" href="#" id="login">Login</a>
     </div>
 
     <!-- "Welcome to Brawler..." -->
@@ -129,11 +130,13 @@ body{
     transition: .1s ease all;
 }
 
+#header > .item:hover{ color: rgba(255, 255, 255, .9) }
+
 #header > #logo.item{
     background: url(https://cdn.discordapp.com/attachments/391709565520969729/393729127099662336/brawler-helmet.svg);
     background-position: 50% 50%;
     background-size: 100%;
-    background-repeat: false;
+    background-repeat: no-repeat;
     width: 15px;
     height: 15px;
     transform: translate(15px, 15px);
@@ -141,7 +144,15 @@ body{
     margin: 0px;
 }
 
-#header > .item:hover{ color: rgba(255, 255, 255, .9) }
+#header > #login.item{
+    right: 0;
+    position: absolute;
+    margin-right: 20px;
+    background: #41454f;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, .6);
+    padding: 10px 15px;
+}
 
 #site-content{
     position: absolute;
