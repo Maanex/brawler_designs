@@ -200,6 +200,9 @@ body{
     width: 106%;
 }
 
+
+/* Giving the background waves different animations */
+
 #wave-a {z-index: 5; animation: wave-a-anim alternate infinite ease-in-out 5s;}
 #wave-b {z-index: 6; animation: wave-b-anim alternate infinite ease-in-out 7s; animation-delay: -2s}
 #wave-c {z-index: 7; animation: wave-c-anim alternate infinite ease-in-out 4s; animation-delay: -1s}
@@ -218,5 +221,13 @@ body{
     0%{transform: translate(0, 0)}
     100%{transform: translate(3%, 0)}
 }
+
+
+/* Custom scrollbar - works only on webkit browsers */
+
+body::-webkit-scrollbar{ width: 6px; }
+body::-webkit-scrollbar-track{ background-color: var(--background); }
+body::-webkit-scrollbar-thumb{ background: #525252; border-radius: 100px; }
+body::-webkit-scrollbar-thumb:hover{ background: var(--theme); }
 </style>
 </html>
