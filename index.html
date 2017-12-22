@@ -44,12 +44,12 @@
     
     <!-- The header -->
     <div id="header">
-        <a class="item" href="#" id="logo"></a>
-        <a class="item" href="#" style="margin-left: 40px;">Challanges <i class="fas fa-caret-down"></i></a>
-        <a class="item" href="#">Leaderboard <i class="fas fa-caret-down"></i></a>
-        <a class="item" href="#">About</a>
-        <a class="item" href="#">FAQ</a>
-        <a class="item" href="#" id="login">Login</a>
+        <a href="#" id="logo"></a>
+        <a href="#" style="margin-left: 40px;">Challanges <i class="fas fa-caret-down"></i></a>
+        <a href="#">Leaderboard <i class="fas fa-caret-down"></i></a>
+        <a href="#">About</a>
+        <a href="#">FAQ</a>
+        <a href="#" id="login">Login</a>
     </div>
 
     <!-- "Welcome to Brawler..." -->
@@ -118,7 +118,7 @@ body{
     height: 100px;
 }
 
-#header > .item{
+#header > a{
     padding: 5px;
     margin: 10px;
     font-family: 'Roboto';
@@ -130,9 +130,9 @@ body{
     transition: .1s ease all;
 }
 
-#header > .item:hover{ color: rgba(255, 255, 255, .9) }
+#header > a:hover{ color: rgba(255, 255, 255, .9) }
 
-#header > #logo.item{
+#header > a#logo{
     background: url(https://cdn.discordapp.com/attachments/391709565520969729/393729127099662336/brawler-helmet.svg);
     background-position: 50% 50%;
     background-size: 100%;
@@ -144,7 +144,7 @@ body{
     margin: 0px;
 }
 
-#header > #login.item{
+#header > a#login{
     right: 0;
     position: absolute;
     margin-right: 20px;
