@@ -75,7 +75,7 @@
         <!-- Content below -->
 
         <!-- Just a placeholder to see scrolling effects -->
-        <div id="placeholder" style="width: 100%;height: 2000px;background: #000;color: blue">
+        <div id="placeholder" style="width: 100%;height: 2000px;color: blue">
             Placeholder <br>
             <br>
             source code on GitHub <a href="https://github.com/Maanex/brawler_designs">[Click]</a>
@@ -91,7 +91,7 @@
 
 *::selection{ background: transparent; }
 
-button{border: none;outline:none;}
+button{ border: none; outline:none; }
 
 body{
     background: var(--background);
@@ -120,8 +120,8 @@ img.rects{
     transition: 1s all cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 
-#start:hover ~ div.rects{ transform: scale(1.1); }
 #start:hover ~ *>img.rects{ filter: grayscale(0); }
+img.rects:hover{ filter: grayscale(0); transition: .5s all ease-out; }
 
 
 @keyframes rects-hover{ 0%{ transform: translateY(-10px)} 100%{ transform: translateY(10px)} }
@@ -222,7 +222,9 @@ img#rect-5{ animation: rect-5-anim 9s alternate-reverse infinite cubic-bezier(0.
     position: absolute;
     top: 100%;
     width: 100%;
-    z-index: 12;
+    z-index: 14;
+    background: var(--background);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .4);
 }
 
 #start{
