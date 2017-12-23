@@ -53,10 +53,17 @@
     </div>
 
     <!-- "Welcome to Brawler..." -->
-    <img id="wct-brawler" src="https://cdn.discordapp.com/attachments/391709565520969729/393716841354362881/welcome-to-brawler.svg" draggable="false"></div>
-
+    <img id="wct-brawler" src="https://cdn.discordapp.com/attachments/391709565520969729/393716841354362881/welcome-to-brawler.svg" draggable="false"></img>
+    
     <!-- "Get Started" Button -->
     <button id="start" title="Click here to get started using Brawler" onclick="alert('Do your stuff here...')">Get Started</button>
+
+    <!-- "Flying" Rectangles -->
+    <div class="rects" id="rect-1"><img class="rects" id="rect-1" src="https://cdn.discordapp.com/attachments/391709565520969729/394057156900421632/brawler-rect.svg" draggable="false"></img></div>
+    <div class="rects" id="rect-2"><img class="rects" id="rect-2" src="https://cdn.discordapp.com/attachments/391709565520969729/394057156900421632/brawler-rect.svg" draggable="false"></img></div>
+    <div class="rects" id="rect-3"><img class="rects" id="rect-3" src="https://cdn.discordapp.com/attachments/391709565520969729/394057156900421632/brawler-rect.svg" draggable="false"></img></div>
+    <div class="rects" id="rect-4"><img class="rects" id="rect-4" src="https://cdn.discordapp.com/attachments/391709565520969729/394057156900421632/brawler-rect.svg" draggable="false"></img></div>
+    <div class="rects" id="rect-5"><img class="rects" id="rect-5" src="https://cdn.discordapp.com/attachments/391709565520969729/394057156900421632/brawler-rect.svg" draggable="false"></img></div>
     
     <!-- "More Details" Sign -->
     <a id="details-sign" href="#details" title="Click here or scroll down for more information about Brawler"><i class="fas fa-caret-down"></i> More Details <i class="fas fa-caret-down"></i></a>
@@ -82,6 +89,8 @@
     --theme: #ea3f30;
 }
 
+*::selection{ background: transparent; }
+
 button{border: none;outline:none;}
 
 body{
@@ -93,6 +102,60 @@ body{
     margin: 0;
     padding: 0;
 }
+
+div.rects{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    z-index: 11;
+    transition: 1s all cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    overflow: visible;
+}
+
+img.rects{
+    width: 100%;
+    height: 100%;
+    filter: grayscale(1);
+    transform: scale(1);
+    transition: 1s all cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+#start:hover ~ div.rects{ transform: scale(1.1); }
+#start:hover ~ *>img.rects{ filter: grayscale(0); }
+
+
+@keyframes rects-hover{ 0%{ transform: translateY(-10px)} 100%{ transform: translateY(10px)} }
+
+div#rect-1{
+    top: 12%; left: 33%; transform: rotate(45deg);
+    animation: rects-hover 6s alternate-reverse infinite cubic-bezier(0.455, 0.03, 0.515, 0.955) }
+img#rect-1{ animation: rect-1-anim 10s alternate-reverse infinite cubic-bezier(0.645, 0.045, 0.355, 1) }
+@keyframes rect-1-anim{ 0%{ transform: rotate(25deg)} 100%{ transform: rotate(65deg)} }
+
+div#rect-2{
+    top: 26%; right: 16%; transform: rotate(90deg);
+    animation: rects-hover 5.5s alternate-reverse infinite cubic-bezier(0.455, 0.03, 0.515, 0.955) }
+img#rect-2{ animation: rect-2-anim 11s alternate-reverse infinite cubic-bezier(0.645, 0.045, 0.355, 1); animation-delay: -4s }
+@keyframes rect-2-anim{ 0%{ transform: rotate(0deg)} 100%{ transform: rotate(90deg)} }
+
+div#rect-3{
+    bottom: 35%; right: 7%; transform: rotate(-22.5deg);
+    animation: rects-hover 4s alternate-reverse infinite cubic-bezier(0.455, 0.03, 0.515, 0.955) }
+img#rect-3{ animation: rect-3-anim 10.5s alternate-reverse infinite cubic-bezier(0.645, 0.045, 0.355, 1); animation-delay: -1s }
+@keyframes rect-3-anim{ 0%{ transform: rotate(2.5deg)} 100%{ transform: rotate(42.5deg)} }
+
+div#rect-4{
+    bottom: 45%; left: 11%; transform: rotate(22.5deg);
+    animation: rects-hover 7s alternate-reverse infinite cubic-bezier(0.455, 0.03, 0.515, 0.955) }
+img#rect-4{ animation: rect-4-anim 11.5s alternate-reverse infinite cubic-bezier(0.645, 0.045, 0.355, 1); animation-delay: -2s }
+@keyframes rect-4-anim{ 0%{ transform: rotate(2.5deg)} 100%{ transform: rotate(42.5deg)} }
+
+div#rect-5{
+    bottom: 15%; left: 30%; transform: rotate(-22.5deg);
+    animation: rects-hover 5s alternate-reverse infinite cubic-bezier(0.455, 0.03, 0.515, 0.955) }
+img#rect-5{ animation: rect-5-anim 9s alternate-reverse infinite cubic-bezier(0.645, 0.045, 0.355, 1); animation-delay: -3s }
+@keyframes rect-5-anim{ 0%{ transform: rotate(-2.5deg)} 100%{ transform: rotate(-42.5deg)} }
+
 
 #details-sign{
     position: absolute;
@@ -116,6 +179,7 @@ body{
     left: 0;
     width: 100%;
     height: 100px;
+    z-index: 13;
 }
 
 #header > a{
@@ -158,7 +222,7 @@ body{
     position: absolute;
     top: 100%;
     width: 100%;
-    z-index: 11;
+    z-index: 12;
 }
 
 #start{
@@ -168,7 +232,7 @@ body{
     padding: 15px 20px;
     font-family: 'Roboto';
     font-size: 20pt;
-    z-index: 11;
+    z-index: 12;
     transform: translateX(-50%);
     border: none;
     border-radius: 5px;
@@ -184,7 +248,7 @@ body{
     top: 30%;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 10;
+    z-index: 12;
 }
 
 #wave-cont{
